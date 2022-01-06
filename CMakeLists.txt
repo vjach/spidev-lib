@@ -13,7 +13,8 @@ add_executable(
 )
 target_link_libraries( spi-testc spidev-lib)
 
-add_library(spidev-lib++ src/spidev_lib++.cc)
+add_library(spidev-lib++ src/spidev_lib++.cc src/spidev_lib++.h)
+target_include_directories(spidev-lib++ INTERFACE src)
 add_executable(spi-testcpp sample/spidev-testcpp.cc)
 target_link_libraries( spi-testcpp spidev-lib++ )
 
